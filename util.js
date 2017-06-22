@@ -231,7 +231,15 @@ Utils.prototype = {
  			}
  		}
  		return destination;
- 	}
+ 	},
+	/**
+	 *把emoji表情转成空字符
+	 * @params {String} 源字符串
+	 * @return {String} 转化后的字符串
+	 */
+	emoji2Str: function(str){
+		return unescape(escape(str).replace(/\%uD{3}/gi,''))
+	}
 }
 
 var utils = new Utils()
